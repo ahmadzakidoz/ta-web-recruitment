@@ -41,10 +41,11 @@ class Home extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $data = [
-                'nama' => htmlspecialchars($this->input->post('nama', true)),
-                'email' => htmlspecialchars($this->input->post('email', true)),
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'aktivasi' => 1
+                'aktivasi' => 1,
+                'email' => htmlspecialchars($this->input->post('email', true)),
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
+                'pasfoto' => 'user.png'
             ];
 
             $this->db->insert('pelamar', $data);
@@ -84,7 +85,8 @@ class Home extends CI_Controller
             if ($pelamar['aktivasi'] == 1) {
                 if (password_verify($password, $pelamar['password'])) {
                     $data = [
-                        'email' => $pelamar['email']
+                        'email' => $pelamar['email'],
+                        'status' => login
                     ];
                     $this->session->set_userdata($data);
                     redirect('user');
@@ -105,6 +107,7 @@ class Home extends CI_Controller
     public function logout()
     {
         $this->session->unset_userdata('email');
+        $this->session->unset_userdata('status');
 
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Anda telah logout!</div>');
         redirect('home/login');
