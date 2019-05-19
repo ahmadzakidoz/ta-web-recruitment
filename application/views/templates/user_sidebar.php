@@ -29,7 +29,7 @@
         <ul class="navbar-nav bg-gray-800 sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url(); ?>">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-building"></i>
                 </div>
@@ -97,7 +97,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?= base_url('home/logout'); ?>">
                     <i class="fas fa-fw fa-sign-out-alt"></i>
                     <span>Logout</span></a>
             </li>
