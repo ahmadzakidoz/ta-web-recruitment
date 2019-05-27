@@ -22,7 +22,7 @@ class User extends CI_Controller
 
         $this->load->view('templates/user_sidebar', $data);
         $this->load->view('templates/user_topbar', $data);
-        $this->load->view('user/user');
+        $this->load->view('user/user', $data);
         $this->load->view('templates/user_footer');
     }
 
@@ -84,5 +84,63 @@ class User extends CI_Controller
         $this->db->update('pelamar', $data);
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data berhasil disimpan!</div>');
         redirect('user/pendidikan');
+    }
+
+    public function upload()
+    {
+        $data['judul'] = 'Upload Dokumen';
+        $data['pelamar'] = $this->db->get_where('pelamar', ['email' => $this->session->userdata['email']])->row_array();
+
+        $this->load->view('templates/user_sidebar', $data);
+        $this->load->view('templates/user_topbar', $data);
+        $this->load->view('user/upload', $data);
+        $this->load->view('templates/user_footer');
+    }
+
+    public function upload_simpan()
+    {
+        $data['pelamar'] = $this->db->get_where('pelamar', ['email' => $this->session->userdata['email']])->row_array();
+
+        $upload_pasfoto = $_FILES['pasfoto']['name'];
+        $upload_cv = $_FILES['cv']['name'];
+
+        if ($upload_pasfoto) {
+            $config['upload_path'] = './assets/img/pasfoto/';
+            $config['allowed_types'] = 'jpg|png';
+            $config['max_size']     = '2048';
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('pasfoto')) {
+                $old_pasfoto = $data['pelamar']['pasfoto'];
+                if ($old_pasfoto != 'user.png') {
+                    unlink(FCPATH . 'assets/img/pasfoto/' . $old_pasfoto);
+                }
+
+                $new_pasfoto = $this->upload->data('file_name');
+                $this->db->set('pasfoto', $new_pasfoto);
+            }
+        }
+
+        if ($upload_cv) {
+            $config['upload_path'] = './assets/dok/';
+            $config['allowed_types'] = 'docx|pdf';
+            $config['max_size']     = '2048';
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('cv')) {
+                $old_cv = $data['pelamar']['cv'];
+                unlink(FCPATH . 'assets/dok/' . $old_cv);
+
+                $new_cv = $this->upload->data('file_name');
+                $this->db->set('cv', $new_cv);
+            }
+        }
+
+        $this->db->where('email', $this->session->userdata['email']);
+        $this->db->update('pelamar');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data berhasil disimpan!</div>');
+        redirect('user/upload');
     }
 }
