@@ -7,8 +7,6 @@ class User extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->library('form_validation');
-
         if ($this->session->userdata('status') != "login") {
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Silahkan login terlebih dahulu!</div>');
             redirect('home/login');
