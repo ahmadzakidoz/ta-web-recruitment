@@ -7,7 +7,7 @@ class Akun extends CI_Controller
     {
         parent::__construct();
 
-        if ($this->session->userdata('status') != 'login') {
+        if ($this->session->userdata('status') != 'login admin') {
             $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Silahkan login terlebih dahulu!</div>');
             redirect('admin/login');
         }
@@ -63,6 +63,20 @@ class Akun extends CI_Controller
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('pelamar');
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data berhasil disimpan!</div>');
+        redirect('admin/akun');
+    }
+
+    public function hapus()
+    {
+        $id = $this->uri->segment(4);
+        $data['pelamar'] = $this->db->get_where('pelamar', ['id' => $id])->row_array();
+        $old_pasfoto = $data['pelamar']['pasfoto'];
+        if ($old_pasfoto != 'user.png') {
+            unlink(FCPATH . 'assets/img/pasfoto/' . $data['pelamar']['pasfoto']);
+        }
+        $this->db->where('id', $id);
+        $this->db->delete('pelamar');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Data berhasil dihapus!</div>');
         redirect('admin/akun');
     }
 }

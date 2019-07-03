@@ -51,20 +51,46 @@
                     <span>Dashboard</span></a>
             </li>
 
-            <li class="nav-item <?php if ($this->uri->segment(2) == "akun") {
+            <li class="nav-item <?php if (($this->uri->segment(2) == "akun") || ($this->uri->segment(2) == "detail")) {
                                     echo 'active';
                                 } ?>">
-                <a class="nav-link" href="<?= base_url('admin/akun'); ?>">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePelamar" aria-expanded="true" aria-controls="collapsePelamar">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>Akun Pelamar</span></a>
+                    <span>Pelamar</span>
+                </a>
+                <div id="collapsePelamar" class="collapse <?php if (($this->uri->segment(2) == "akun") || ($this->uri->segment(2) == "detail")) {
+                                                                echo 'show';
+                                                            } ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-light py-2 collapse-inner rounded">
+                        <a class="collapse-item <?php if ($this->uri->segment(2) == "akun") {
+                                                    echo 'active';
+                                                } ?>" href="<?= base_url('admin/akun'); ?>"><i class="fas fa-fw fa-user"></i> Akun Pelamar</a>
+                        <a class="collapse-item <?php if ($this->uri->segment(2) == "detail") {
+                                                    echo 'active';
+                                                } ?>" href="<?= base_url('admin/detail'); ?>"><i class="fas fa-fw fa-user-tie"></i> Detail Pelamar</a>
+                    </div>
+                </div>
             </li>
 
-            <li class="nav-item <?php if ($this->uri->segment(2) == "detail") {
+            <li class="nav-item <?php if (($this->uri->segment(2) == "pengumuman") || ($this->uri->segment(2) == "add_pengumuman")) {
                                     echo 'active';
                                 } ?>">
-                <a class="nav-link" href="<?= base_url('admin/detail'); ?>">
-                    <i class="fas fa-fw fa-user-tie"></i>
-                    <span>Detail Pelamar</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePengumuman" aria-expanded="true" aria-controls="collapsePengumuman">
+                    <i class="fas fa-fw fa-newspaper"></i>
+                    <span>Pengumuman</span>
+                </a>
+                <div id="collapsePengumuman" class="collapse <?php if (($this->uri->segment(2) == "pengumuman") || ($this->uri->segment(2) == "add_pengumuman")) {
+                                                                    echo 'show';
+                                                                } ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-light py-2 collapse-inner rounded">
+                        <a class="collapse-item <?php if ($this->uri->segment(2) == "pengumuman") {
+                                                    echo 'active';
+                                                } ?>" href="<?= base_url('admin/pengumuman'); ?>"><i class="fas fa-fw fa-newspaper"></i> List Pengumuman</a>
+                        <a class="collapse-item <?php if ($this->uri->segment(2) == "add_pengumuman") {
+                                                    echo 'active';
+                                                } ?>" href="<?= base_url('admin/add_pengumuman'); ?>"><i class="fas fa-fw fa-edit"></i> Add Pengumuman</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Divider -->

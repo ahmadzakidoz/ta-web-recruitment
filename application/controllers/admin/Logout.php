@@ -7,7 +7,7 @@ class Logout extends CI_Controller
     {
         parent::__construct();
 
-        if ($this->session->userdata('status') != 'login') {
+        if ($this->session->userdata('status') != 'login admin') {
             $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Silahkan login terlebih dahulu!</div>');
             redirect('admin/login');
         }

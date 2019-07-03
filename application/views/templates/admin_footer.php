@@ -60,11 +60,34 @@
 <!-- Page level custom scripts -->
 <script src="<?= base_url('assets/'); ?>js/demo/datatables-demo.js"></script>
 
+<script src="<?= base_url('assets/'); ?>vendor/ckeditor/ckeditor.js"></script>
+
+<script>
+    $(function() {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+
+        CKEDITOR.replace('ckeditor');
+
+
+    });
+</script>
+
 <script>
     $('.custom-file-input').on('change', function() {
         let fileName = $(this).val().split('\\').pop();
         $(this).next('.custom-file-label').addClass("selected").html(fileName);
     })
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#pm').DataTable({
+            "order": [
+                [0, "desc"]
+            ]
+        });
+    });
 </script>
 
 </body>

@@ -3,11 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Home extends CI_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->library('form_validation');
-    }
 
     public function index()
     {
@@ -91,15 +86,15 @@ class Home extends CI_Controller
                     $this->session->set_userdata($data);
                     redirect('user');
                 } else {
-                    $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Password Anda salah!</div>');
+                    $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Password Anda salah!</div>');
                     redirect('home/login');
                 }
             } else {
-                $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Silahkan aktivasikan email Anda terlebih dahulu!</div>');
+                $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Silahkan aktivasikan email Anda terlebih dahulu!</div>');
                 redirect('home/login');
             }
         } else {
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Email Anda belum terdaftar!</div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Email Anda belum terdaftar!</div>');
             redirect('home/login');
         }
     }

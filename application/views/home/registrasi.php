@@ -36,7 +36,7 @@
                             <a class="small" href="forgot-password.html">Lupa Password?</a>
                         </div>
                         <div class="text-center">
-                            <a class="small" href="<?= base_url(); ?>">Sudah punya akun? Login Disini!</a>
+                            <a class="small" href="<?= base_url('home/login'); ?>">Sudah punya akun? Login Disini!</a>
                         </div>
                     </div>
                 </div>

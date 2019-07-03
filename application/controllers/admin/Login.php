@@ -27,7 +27,7 @@ class Login extends CI_Controller
                 if (password_verify($password, $admin['password'])) {
                     $data = [
                         'email' => $admin['email'],
-                        'status' => 'login'
+                        'status' => 'login admin'
                     ];
                     $this->session->set_userdata($data);
                     redirect('admin/dashboard');

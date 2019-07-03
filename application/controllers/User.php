@@ -141,4 +141,52 @@ class User extends CI_Controller
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data berhasil disimpan!</div>');
         redirect('user/upload');
     }
+
+    public function ganti_password()
+    {
+        $this->form_validation->set_rules('old_password', 'PasswordLama', 'required|trim', [
+            'required' => '*tidak boleh kosong!'
+        ]);
+        $this->form_validation->set_rules('new_password1', 'PasswordBaru', 'required|trim|min_length[6]|matches[new_password2]', [
+            'required' => '*tidak boleh kosong!',
+            'min_length' => '*password minimal 6 karater!',
+            'matches' => '*password harus sama!'
+        ]);
+        $this->form_validation->set_rules('new_password2', ' UlangPassword', 'required|trim|matches[new_password1]', [
+            'required' => '*tidak boleh kosong!',
+            'matches' => '*password harus sama!'
+        ]);
+
+        $data['pelamar'] = $this->db->get_where('pelamar', ['email' => $this->session->userdata['email']])->row_array();
+
+        if ($this->form_validation->run() == false) {
+            $data['judul'] = 'Ganti Password | Recruitment PPSU Cipinang';
+
+            $this->load->view('templates/user_sidebar', $data);
+            $this->load->view('templates/user_topbar', $data);
+            $this->load->view('user/ganti_password', $data);
+            $this->load->view('templates/user_footer');
+        } else {
+            $password = $this->input->post('old_password');
+            $old_password = $data['pelamar']['password'];
+            $email = $data['pelamar']['email'];
+
+            if (password_verify($password, $old_password)) {
+                if ($password != $this->input->post('new_password1')) {
+                    $new_password = password_hash($this->input->post('new_password1'), PASSWORD_DEFAULT);
+                    $this->db->set('password', $new_password);
+                    $this->db->where('email', $email);
+                    $this->db->update('pelamar');
+                    $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Password berhasil diubah!</div>');
+                    redirect('user/ganti_password');
+                } else {
+                    $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Password tidak boleh sama dengan sebelumnya!</div>');
+                    redirect('user/ganti_password');
+                }
+            } else {
+                $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Password Anda salah!</div>');
+                redirect('user/ganti_password');
+            }
+        }
+    }
 }

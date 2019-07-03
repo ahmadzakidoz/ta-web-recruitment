@@ -35,10 +35,10 @@
                             <a class="nav-link text-white" href="<?= base_url(); ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Panduan</a>
+                            <a class="nav-link text-white" href="<?= base_url('panduan'); ?>">Panduan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Pengumuman</a>
+                            <a class="nav-link text-white" href="<?= base_url('pengumuman'); ?>">Pengumuman</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white btn btn-warning mx-1" href="<?= base_url('home/registrasi'); ?>">Registrasi</a>
