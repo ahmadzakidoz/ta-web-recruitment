@@ -42,20 +42,78 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label class="col-sm-2 col-form-label font-weight-bold">Provinsi</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control text-uppercase" id="provinsi" name="provinsi" placeholder="PROVINSI" value="<?= $pelamar['provinsi'] ?>" readonly>
+                    <?php if ($pelamar['provinsi'] == null) {
+                        echo '<small class="text-danger">*Provinsi harus diisi!</small>';
+                    } ?>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label class="col-sm-2 col-form-label font-weight-bold">Kabupaten/Kota</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control text-uppercase" id="kota" name="kota" placeholder="KABUPATEN/KOTA" value="<?= $pelamar['kota'] ?>">
+                    <select class="form-control" id="kota" name="kota">
+                        <option value="">--</option>
+                        <?php foreach ($kota as $kt) {
+                            $value = url_title($kt->kota, '-') ?>
+                            <option value="<?= $value ?>" <?php if ($pelamar['kota'] == $kt->kota) {
+                                                                echo 'selected';
+                                                            } ?>><?= $kt->kota ?></option>
+                        <?php } ?>
+                    </select>
                     <?php if ($pelamar['kota'] == null) {
                         echo '<small class="text-danger">*Kabupaten/kota harus diisi!</small>';
                     } ?>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label font-weight-bold">Provinsi</label>
+                <label class="col-sm-2 col-form-label font-weight-bold">Kecamatan</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control text-uppercase" id="provinsi" name="provinsi" placeholder="PROVINSI" value="<?= $pelamar['provinsi'] ?>">
-                    <?php if ($pelamar['provinsi'] == null) {
-                        echo '<small class="text-danger">*Provinsi harus diisi!</small>';
+                    <select class="form-control" id="kecamatan" name="kecamatan">
+                        <option value="">--</option>
+                        <?php
+
+                        $queryKec = "SELECT `kota`.`kota`, `kecamatan`.`kecamatan`
+                                       FROM `kota` JOIN `kecamatan` 
+                                         ON `kota`.`id` = `kecamatan`.`id_kota`";
+                        $kecamatan = $this->db->query($queryKec)->result();
+
+                        foreach ($kecamatan as $kc) {
+                            $value = url_title($kc->kecamatan, '-');
+                            $class = url_title($kc->kota, '-'); ?>
+                            <option value="<?= $value ?>" class="<?= $class ?>" <?php if ($pelamar['kecamatan'] == $kc->kecamatan) {
+                                                                                    echo 'selected';
+                                                                                } ?>><?= $kc->kecamatan ?></option>
+                        <?php } ?>
+                    </select>
+                    <?php if ($pelamar['kecamatan'] == null) {
+                        echo '<small class="text-danger">*Kecamatan harus diisi!</small>';
+                    } ?>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label font-weight-bold">Kelurahan</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="kelurahan" name="kelurahan">
+                        <option value="">--</option>
+                        <?php
+
+                        $queryKel = "SELECT `kecamatan`.`kecamatan`, `kelurahan`.`kelurahan`
+                                       FROM `kecamatan` JOIN `kelurahan` 
+                                         ON `kecamatan`.`id` = `kelurahan`.`id_kecamatan`";
+                        $kelurahan = $this->db->query($queryKel)->result();
+
+                        foreach ($kelurahan as $kl) {
+                            $valuekel = url_title($kl->kelurahan, '-');
+                            $classkel = url_title($kl->kecamatan, '-'); ?>
+                            <option value="<?= $valuekel ?>" class="<?= $classkel ?>" <?php if ($pelamar['kelurahan'] == $kl->kelurahan) {
+                                                                                            echo 'selected';
+                                                                                        } ?>><?= $kl->kelurahan ?></option>
+                        <?php } ?>
+                    </select>
+                    <?php if ($pelamar['kelurahan'] == null) {
+                        echo '<small class="text-danger">*Kelurahan harus diisi!</small>';
                     } ?>
                 </div>
             </div>
@@ -71,7 +129,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label font-weight-bold">Tanggal Lahir</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" value="<?= $pelamar['tgl_lahir'] ?>">
+                    <input type="text" class="form-control" id="datepicker" name="tgl_lahir" value="<?= $pelamar['tgl_lahir'] ?>">
                     <?php if ($pelamar['tgl_lahir'] == null) {
                         echo '<small class="text-danger">*Tanggal lahir harus diisi!</small>';
                     } ?>
@@ -81,12 +139,71 @@
                 <label class="col-sm-2 col-form-label font-weight-bold">Jenis Kelamin</label>
                 <div class="col-sm-10">
                     <select class="form-control" id="jns_kelamin" name="jns_kelamin">
-                        <option selected><?= $pelamar['jns_kelamin'] ?></option>
-                        <option>PRIA</option>
-                        <option>WANITA</option>
+                        <option value="">--</option>
+                        <option value="PRIA" <?php if ($pelamar['jns_kelamin'] == 'PRIA') {
+                                                    echo 'selected';
+                                                } ?>>PRIA</option>
+                        <option value="WANITA" <?php if ($pelamar['jns_kelamin'] == 'WANITA') {
+                                                    echo 'selected';
+                                                } ?>>WANITA</option>
                     </select>
                     <?php if ($pelamar['jns_kelamin'] == null) {
                         echo '<small class="text-danger">*Jenis kelamin harus diisi!</small>';
+                    } ?>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label font-weight-bold">Agama</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="agama" name="agama">
+                        <option value="">--</option>
+                        <option value="ISLAM" <?php if ($pelamar['agama'] == 'ISLAM') {
+                                                    echo 'selected';
+                                                } ?>>ISLAM</option>
+                        <option value="HINDU" <?php if ($pelamar['agama'] == 'HINDU') {
+                                                    echo 'selected';
+                                                } ?>>HINDU</option>
+                        <option value="BUDDHA" <?php if ($pelamar['agama'] == 'BUDDHA') {
+                                                    echo 'selected';
+                                                } ?>>BUDDHA</option>
+                        <option value="KATOLIK" <?php if ($pelamar['agama'] == 'KATOLIK') {
+                                                    echo 'selected';
+                                                } ?>>KATOLIK</option>
+                        <option value="PROTESTAN" <?php if ($pelamar['agama'] == 'PROTESTAN') {
+                                                        echo 'selected';
+                                                    } ?>>PROTESTAN</option>
+                        <option value="KHONGHUCU" <?php if ($pelamar['agama'] == 'KHONGHUCU') {
+                                                        echo 'selected';
+                                                    } ?>>KHONGHUCU</option>
+                    </select>
+                    <?php if ($pelamar['agama'] == null) {
+                        echo '<small class="text-danger">*Agama harus diisi!</small>';
+                    } ?>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label font-weight-bold">Status Nikah</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="status" name="status">
+                        <option value="">--</option>
+                        <option value="BELUM" <?php if ($pelamar['status'] == 'BELUM') {
+                                                    echo 'selected';
+                                                } ?>>BELUM</option>
+                        <option value="SUDAH" <?php if ($pelamar['status'] == 'SUDAH') {
+                                                    echo 'selected';
+                                                } ?>>SUDAH</option>
+                    </select>
+                    <?php if ($pelamar['status'] == null) {
+                        echo '<small class="text-danger">*Status harus diisi!</small>';
+                    } ?>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label font-weight-bold">No. Telp/HP</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control text-uppercase" id="telp" name="telp" placeholder="NO. TELP/HP LAHIR" value="<?= $pelamar['telp'] ?>">
+                    <?php if ($pelamar['telp'] == null) {
+                        echo '<small class="text-danger">*No. telp/hp harus diisi!</small>';
                     } ?>
                 </div>
             </div>

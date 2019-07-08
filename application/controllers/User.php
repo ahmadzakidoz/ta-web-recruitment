@@ -17,6 +17,8 @@ class User extends CI_Controller
     {
         $data['judul'] = 'Halaman Awal';
         $data['pelamar'] = $this->db->get_where('pelamar', ['email' => $this->session->userdata['email']])->row_array();
+        $this->db->order_by('id', 'DESC');
+        $data['pengumuman'] = $this->db->get('pengumuman', 5)->result();
 
         $this->load->view('templates/user_sidebar', $data);
         $this->load->view('templates/user_topbar', $data);
@@ -28,6 +30,7 @@ class User extends CI_Controller
     {
         $data['judul'] = 'Biodata';
         $data['pelamar'] = $this->db->get_where('pelamar', ['email' => $this->session->userdata['email']])->row_array();
+        $data['kota'] = $this->db->get('kota')->result();
 
         $this->load->view('templates/user_sidebar', $data);
         $this->load->view('templates/user_topbar', $data);
@@ -41,11 +44,15 @@ class User extends CI_Controller
             'nama' => $this->input->post('nama'),
             'nik' => $this->input->post('nik'),
             'alamat' => $this->input->post('alamat'),
-            'kota' => $this->input->post('kota'),
-            'provinsi' => $this->input->post('provinsi'),
+            'kota' => str_replace('-', ' ', $this->input->post('kota')),
+            'kecamatan' => str_replace('-', ' ', $this->input->post('kecamatan')),
+            'kelurahan' => str_replace('-', ' ', $this->input->post('kelurahan')),
             'tmp_lahir' => $this->input->post('tmp_lahir'),
             'tgl_lahir' => $this->input->post('tgl_lahir'),
             'jns_kelamin' => $this->input->post('jns_kelamin'),
+            'agama' => $this->input->post('agama'),
+            'status' => $this->input->post('status'),
+            'telp' => $this->input->post('telp'),
             'pasfoto' => 'user.png'
         ];
 

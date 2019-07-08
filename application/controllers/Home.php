@@ -40,6 +40,7 @@ class Home extends CI_Controller
                 'aktivasi' => 1,
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'nama' => htmlspecialchars($this->input->post('nama', true)),
+                'provinsi' => 'dki jakarta',
                 'pasfoto' => 'user.png'
             ];
 

@@ -49,6 +49,8 @@
 
 <!-- Core plugin JavaScript-->
 <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<?= base_url('assets/'); ?>vendor/jquery-ui/jquery-ui.js"></script>
+<script src="<?= base_url('assets/'); ?>vendor/jquery-chained/jquery.chained.js"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
@@ -58,6 +60,25 @@
         let fileName = $(this).val().split('\\').pop();
         $(this).next('.custom-file-label').addClass("selected").html(fileName);
     })
+</script>
+
+<script>
+    $(function() {
+        $("#datepicker").datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>
+
+<script>
+    $("#kecamatan").chained("#kota");
+</script>
+<script>
+    $("#kelurahan").chained("#kecamatan");
+</script>
+<script>
+    $("#jurusan").chained("#jenjang");
 </script>
 
 </body>
