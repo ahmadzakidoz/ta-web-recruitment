@@ -36,11 +36,12 @@ class Home extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $data = [
+                'tgl_daftar' => time(),
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                 'aktivasi' => 1,
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'nama' => htmlspecialchars($this->input->post('nama', true)),
-                'provinsi' => 'dki jakarta',
+                'provinsi' => 'DKI Jakarta',
                 'pasfoto' => 'user.png'
             ];
 

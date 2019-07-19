@@ -56,6 +56,14 @@
 <!-- Page level plugins -->
 <script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" language="javascript" src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.colReorder.js"></script>
+<script type="text/javascript" language="javascript" src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.buttons.js"></script>
+<script type="text/javascript" language="javascript" src="<?= base_url('assets/'); ?>vendor/datatables/buttons.print.js"></script>
+<script type="text/javascript" language="javascript" src="<?= base_url('assets/'); ?>vendor/datatables/buttons.colVis.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" language="javascript" src="<?= base_url('assets/'); ?>vendor/datatables/buttons.html5.js"></script>
 
 <!-- Page level custom scripts -->
 <script src="<?= base_url('assets/'); ?>js/demo/datatables-demo.js"></script>
@@ -89,6 +97,61 @@
         });
     });
 </script>
+
+<script>
+    $(document).ready(function() {
+        var table = $('#dataPelamar').DataTable({
+            colReorder: true,
+            dom: 'Bfrtip',
+            buttons: [
+                'colvis', {
+                    extend: 'excel',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                }, {
+                    extend: 'pdf',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                }, {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                }
+            ]
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        var table = $('#Seleksi1').DataTable({
+            colReorder: true,
+            dom: 'Bfrtip',
+            buttons: [
+                'colvis', {
+                    extend: 'excel',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                }, {
+                    extend: 'pdf',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                }, {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                }
+            ]
+        });
+    });
+</script>
+
+
 
 </body>
 

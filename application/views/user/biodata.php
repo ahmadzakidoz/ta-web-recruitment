@@ -6,6 +6,15 @@
         <?= $this->session->flashdata('pesan'); ?>
         <form method="post" action="<?= base_url('user/biodata_simpan'); ?>">
             <div class="form-group row">
+                <label class="col-sm-2 col-form-label font-weight-bold">No. KK</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nkk" name="nkk" placeholder="No. Kartu Keluarga" value="<?= $pelamar['nkk'] ?>">
+                    <?php if ($pelamar['nkk'] == null) {
+                        echo '<small class="text-danger">*No. KK harus diisi!</small>';
+                    } ?>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label class="col-sm-2 col-form-label font-weight-bold">NIK</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK" value="<?= $pelamar['nik'] ?>">
@@ -35,7 +44,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label font-weight-bold">Alamat (KTP)</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control text-uppercase" id="alamat" name="alamat" placeholder="ALAMAT SESUAI KTP" value="<?= $pelamar['alamat'] ?>">
+                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="ALAMAT SESUAI KTP" value="<?= $pelamar['alamat'] ?>">
                     <?php if ($pelamar['alamat'] == null) {
                         echo '<small class="text-danger">*Alamat harus diisi!</small>';
                     } ?>
@@ -44,7 +53,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label font-weight-bold">Provinsi</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control text-uppercase" id="provinsi" name="provinsi" placeholder="PROVINSI" value="<?= $pelamar['provinsi'] ?>" readonly>
+                    <input type="text" class="form-control" id="provinsi" name="provinsi" placeholder="PROVINSI" value="<?= $pelamar['provinsi'] ?>" readonly>
                     <?php if ($pelamar['provinsi'] == null) {
                         echo '<small class="text-danger">*Provinsi harus diisi!</small>';
                     } ?>
@@ -120,7 +129,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label font-weight-bold">Tempat Lahir</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control text-uppercase" id="tmp_lahir" name="tmp_lahir" placeholder="TEMPAT LAHIR" value="<?= $pelamar['tmp_lahir'] ?>">
+                    <input type="text" class="form-control" id="tmp_lahir" name="tmp_lahir" placeholder="TEMPAT LAHIR" value="<?= $pelamar['tmp_lahir'] ?>">
                     <?php if ($pelamar['tmp_lahir'] == null) {
                         echo '<small class="text-danger">*Tempat lahir harus diisi!</small>';
                     } ?>
@@ -175,6 +184,9 @@
                         <option value="KHONGHUCU" <?php if ($pelamar['agama'] == 'KHONGHUCU') {
                                                         echo 'selected';
                                                     } ?>>KHONGHUCU</option>
+                        <option value="LAIN-LAIN" <?php if ($pelamar['agama'] == 'LAIN-LAIN') {
+                                                        echo 'selected';
+                                                    } ?>>LAIN-LAIN</option>
                     </select>
                     <?php if ($pelamar['agama'] == null) {
                         echo '<small class="text-danger">*Agama harus diisi!</small>';
@@ -182,16 +194,19 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label font-weight-bold">Status Nikah</label>
+                <label class="col-sm-2 col-form-label font-weight-bold">Status Perkawinan</label>
                 <div class="col-sm-10">
                     <select class="form-control" id="status" name="status">
                         <option value="">--</option>
-                        <option value="BELUM" <?php if ($pelamar['status'] == 'BELUM') {
+                        <option value="LAJANG" <?php if ($pelamar['status'] == 'LAJANG') {
                                                     echo 'selected';
-                                                } ?>>BELUM</option>
-                        <option value="SUDAH" <?php if ($pelamar['status'] == 'SUDAH') {
+                                                } ?>>LAJANG</option>
+                        <option value="MENIKAH" <?php if ($pelamar['status'] == 'MENIKAH') {
                                                     echo 'selected';
-                                                } ?>>SUDAH</option>
+                                                } ?>>MENIKAH</option>
+                        <option value="DUDA/JANDA" <?php if ($pelamar['status'] == 'DUDA/JANDA') {
+                                                        echo 'selected';
+                                                    } ?>>DUDA/JANDA</option>
                     </select>
                     <?php if ($pelamar['status'] == null) {
                         echo '<small class="text-danger">*Status harus diisi!</small>';
@@ -201,7 +216,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label font-weight-bold">No. Telp/HP</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control text-uppercase" id="telp" name="telp" placeholder="NO. TELP/HP LAHIR" value="<?= $pelamar['telp'] ?>">
+                    <input type="text" class="form-control" id="telp" name="telp" placeholder="NO. TELP/HP LAHIR" value="<?= $pelamar['telp'] ?>">
                     <?php if ($pelamar['telp'] == null) {
                         echo '<small class="text-danger">*No. telp/hp harus diisi!</small>';
                     } ?>

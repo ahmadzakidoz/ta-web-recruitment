@@ -5,40 +5,62 @@
     <div class="card-body">
         <?= $this->session->flashdata('pesan'); ?>
         <div class="table-responsive">
-            <table class="table table-bordered table-sm small" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered table-striped table-sm small" id="dataPelamar" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Foto</th>
                         <th>Nama</th>
+                        <th>Email</th>
+                        <th>No. Telp</th>
+                        <th>Tgl Daftar</th>
+                        <th>Jns Kelamin</th>
+                        <th>Tmp Lahir</th>
+                        <th>Tgl Lahir</th>
+                        <th>Agama</th>
+                        <th>Status</th>
                         <th>NIK</th>
-                        <th>Kelamin</th>
                         <th>Alamat</th>
                         <th>Kota</th>
-                        <th>Provinsi</th>
-                        <th>TTL</th>
+                        <th>Kecamatan</th>
+                        <th>Kelurahan</th>
                         <th>Jenjang</th>
-                        <th>Lulus</th>
-                        <th>Nilai/IPK</th>
-                        <th>CV</th>
-                        <th>Actions</th>
+                        <th>Sekolah/Institut</th>
+                        <th>Jurusan</th>
+                        <th>Thn Lulus</th>
+                        <th>Akreditas</th>
+                        <th>Nilai Rata/IPK</th>
+                        <th>Berkas Dokumen</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($pelamar as $p) { ?>
                         <tr>
-                            <td><img style="height: 50px;" src="<?= base_url('assets/img/pasfoto/') . $p->pasfoto ?>"></td>
-                            <td><a href="#" data-toggle="modal" data-target="#DetailPelamar<?= $p->id ?>"><?= $p->nama ?></a></td>
-                            <td><?= $p->nik ?></td>
-                            <td><?= $p->jns_kelamin ?></td>
-                            <td class="text-uppercase"><?= $p->alamat ?></td>
-                            <td class="text-uppercase"><?= $p->kota ?></td>
-                            <td class="text-uppercase"><?= $p->provinsi ?></td>
-                            <td class="text-uppercase"><?= $p->tmp_lahir . ', ' . $p->tgl_lahir ?></td>
-                            <td class="text-uppercase"><?= $p->jenjang . ', ' . $p->jurusan . ' ' . $p->sekolah ?></td>
-                            <td><?= $p->thn_lulus ?></td>
-                            <td><?= $p->nilai ?></td>
-                            <td><a href="<?= base_url('assets/dok/') . $p->cv ?>">View</td>
-                            <td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->id ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><img style="width: 50px;" src="<?= base_url('assets/img/pasfoto/') . $p->pasfoto ?>"></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->nama ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->email ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->telp ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= date('d/m/Y', $p->tgl_daftar); ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->jns_kelamin ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->tmp_lahir ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->tgl_lahir ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->agama ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->status ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->nik ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->alamat ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->kota ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->kecamatan ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->kelurahan ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->jenjang ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->sekolah ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->jurusan ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->thn_lulus ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->akreditasi ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->nilai ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->cv ?></td>
+                            <td style="vertical-align:middle;text-align:center;">
                                 <div class="btn-group"><a class="btn btn-primary" href="#" data-toggle="modal" data-target="#EditDetail<?= $p->id ?>"><i class="fa fa-lg fa-edit"></i></a><a class="btn btn-danger" href="#" data-toggle="modal" data-target="#HapusDetail<?= $p->id ?>"><i class="fa fa-lg fa-trash"></i></a></div>
                             </td>
                         </tr>

@@ -20,6 +20,10 @@
 
     <!-- Custom styles for this page -->
     <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>vendor/datatables/colReorder.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>vendor/datatables/buttons.dataTables.css">
+
+
 
 </head>
 
@@ -68,6 +72,39 @@
                         <a class="collapse-item <?php if ($this->uri->segment(2) == "detail") {
                                                     echo 'active';
                                                 } ?>" href="<?= base_url('admin/detail'); ?>"><i class="fas fa-fw fa-user-tie"></i> Detail Pelamar</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item <?php if (($this->uri->segment(2) == "seleksi_1") || ($this->uri->segment(2) == "seleksi_2")) {
+                                    echo 'active';
+                                } ?>">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeleksi" aria-expanded="true" aria-controls="collapseSeleksi">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Hasil Seleksi</span>
+                </a>
+                <div id="collapseSeleksi" class="collapse <?php if (($this->uri->segment(2) == "seleksi_1") || ($this->uri->segment(2) == "seleksi_2")) {
+                                                                echo 'show';
+                                                            } ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-light py-2 collapse-inner rounded">
+                        <a class="collapse-item <?php if ($this->uri->segment(2) == "seleksi_1") {
+                                                    echo 'active';
+                                                } ?>" href="<?= base_url('admin/seleksi_1'); ?>"><i class="fas fa-fw fa-user"></i> Seleksi Administrasi</a>
+                        <a class="collapse-item <?php if ($this->uri->segment(2) == "seleksi_2") {
+                                                    echo 'active';
+                                                } ?>" href="<?= base_url('admin/seleksi_2'); ?>"><i class="fas fa-fw fa-user-tie"></i> Pengalaman Kerja</a>
+                        <a class="collapse-item <?php if ($this->uri->segment(2) == "seleksi_3") {
+                                                    echo 'active';
+                                                } ?>" href="<?= base_url('admin/seleksi_3'); ?>"><i class="fas fa-fw fa-user-tie"></i> Praktek Lapangan</a>
+                        <a class="collapse-item <?php if ($this->uri->segment(2) == "seleksi_4") {
+                                                    echo 'active';
+                                                } ?>" href="<?= base_url('admin/seleksi_4'); ?>"><i class="fas fa-fw fa-user-tie"></i> Tes Tertulis</a>
+                        <a class="collapse-item <?php if ($this->uri->segment(2) == "seleksi_4") {
+                                                    echo 'active';
+                                                } ?>" href="<?= base_url('admin/seleksi_4'); ?>"><i class="fas fa-fw fa-user-tie"></i> Wawancara</a>
+                        <a class="collapse-item <?php if ($this->uri->segment(2) == "seleksi_total") {
+                                                    echo 'active';
+                                                } ?>" href="<?= base_url('admin/seleksi_total'); ?>"><i class="fas fa-fw fa-user-tie"></i> Hasil Total</a>
                     </div>
                 </div>
             </li>

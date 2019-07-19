@@ -43,7 +43,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label font-weight-bold">Sekolah/Institusi</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control text-uppercase" id="sekolah" name="sekolah" placeholder="SEKOLAH/INSTITUSI" value="<?= $pelamar['sekolah'] ?>">
+                    <input type="text" class="form-control" id="sekolah" name="sekolah" placeholder="SEKOLAH/INSTITUSI" value="<?= $pelamar['sekolah'] ?>">
                     <?php if ($pelamar['sekolah'] == null) {
                         echo '<small class="text-danger">*Sekolah/institusi harus diisi!</small>';
                     } ?>
@@ -341,22 +341,9 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label font-weight-bold">Keterangan</label>
-                <div class="col-sm-10">
-                    <select class="form-control" id="keterangan" name="keterangan">
-                        <option selected><?= $pelamar['keterangan'] ?></option>
-                        <option>LULUS</option>
-                        <option>TIDAK LULUS</option>
-                    </select>
-                    <?php if ($pelamar['keterangan'] == null) {
-                        echo '<small class="text-danger">*Keterangan harus diisi!</small>';
-                    } ?>
-                </div>
-            </div>
-            <div class="form-group row">
                 <label class="col-sm-2 col-form-label font-weight-bold">Tahun Lulus</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control text-uppercase" id="thn_lulus" name="thn_lulus" placeholder="TAHUN LULUS" value="<?= $pelamar['thn_lulus'] ?>">
+                    <input type="text" class="form-control" id="thn_lulus" name="thn_lulus" placeholder="TAHUN LULUS" value="<?= $pelamar['thn_lulus'] ?>">
                     <?php if ($pelamar['thn_lulus'] == null) {
                         echo '<small class="text-danger">*Tahun lulus harus diisi!</small>';
                     } ?>
@@ -365,7 +352,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label font-weight-bold">Nilai Rata-Rata/IPK</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control text-uppercase" id="nilai" name="nilai" placeholder="NILAi RATA-RATA/IPK" value="<?= $pelamar['nilai'] ?>">
+                    <input type="text" class="form-control" id="nilai" name="nilai" placeholder="NILAi RATA-RATA/IPK" value="<?= $pelamar['nilai'] ?>">
                     <?php if ($pelamar['nilai'] == null) {
                         echo '<small class="text-danger">*nilai harus diisi!</small>';
                     } ?>

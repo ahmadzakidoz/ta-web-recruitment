@@ -81,6 +81,14 @@
                     <span>Upload Dokumen</span></a>
             </li>
 
+            <li class="nav-item <?php if ($this->uri->segment(2) == "dok_pendukung") {
+                                    echo 'active';
+                                } ?>">
+                <a class="nav-link" href="<?= base_url('user/dok_pendukung'); ?>">
+                    <i class="fas fa-fw fa-file-upload"></i>
+                    <span>Dokumen Pendukung</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
