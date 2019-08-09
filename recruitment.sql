@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2019 at 08:18 AM
+-- Generation Time: Aug 09, 2019 at 04:32 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -517,10 +517,10 @@ CREATE TABLE `seleksi_1` (
 
 INSERT INTO `seleksi_1` (`id`, `np`, `status_lamaran`, `keterangan`, `alert`) VALUES
 (2, 19001, 'LOLOS', '', 'success'),
-(3, 19002, 'TIDAK', '', 'danger'),
-(4, 19003, 'PROSES', '', ''),
-(5, 19004, 'PROSES', '', ''),
-(6, 19005, 'PROSES', '', ''),
+(3, 19002, 'LOLOS', '', 'success'),
+(4, 19003, 'LOLOS', '', 'success'),
+(5, 19004, 'LOLOS', '', 'success'),
+(6, 19005, 'LOLOS', '', 'success'),
 (7, 19006, 'PROSES', '', ''),
 (8, 19007, 'PROSES', '', ''),
 (9, 19008, 'PROSES', '', ''),
@@ -536,7 +536,7 @@ INSERT INTO `seleksi_1` (`id`, `np`, `status_lamaran`, `keterangan`, `alert`) VA
 CREATE TABLE `seleksi_2` (
   `id` int(11) NOT NULL,
   `np` int(11) NOT NULL,
-  `nilai` varchar(3) NOT NULL,
+  `nilai2` varchar(3) NOT NULL,
   `status_lamaran` varchar(10) NOT NULL,
   `keterangan` varchar(128) NOT NULL,
   `alert` varchar(10) NOT NULL
@@ -546,8 +546,12 @@ CREATE TABLE `seleksi_2` (
 -- Dumping data for table `seleksi_2`
 --
 
-INSERT INTO `seleksi_2` (`id`, `np`, `nilai`, `status_lamaran`, `keterangan`, `alert`) VALUES
-(5, 19001, '100', 'LANJUT', 'Maaf, Anda Tidak Lolos Tahap 2: Pengalaman Kerja.', 'success');
+INSERT INTO `seleksi_2` (`id`, `np`, `nilai2`, `status_lamaran`, `keterangan`, `alert`) VALUES
+(5, 19001, '100', 'LANJUT', 'Anda Lolos Tahap 2: Pengalaman Kerja', 'success'),
+(6, 19003, '80', 'LANJUT', 'Anda Lolos Tahap 2: Pengalaman Kerja', 'success'),
+(7, 19005, '60', 'LANJUT', 'Anda Lolos Tahap 2: Pengalaman Kerja', 'success'),
+(8, 19002, '90', 'LANJUT', 'Anda Lolos Tahap 2: Pengalaman Kerja', 'success'),
+(9, 19004, '70', 'LANJUT', 'Anda Lolos Tahap 2: Pengalaman Kerja', 'success');
 
 -- --------------------------------------------------------
 
@@ -558,7 +562,7 @@ INSERT INTO `seleksi_2` (`id`, `np`, `nilai`, `status_lamaran`, `keterangan`, `a
 CREATE TABLE `seleksi_3` (
   `id` int(11) NOT NULL,
   `np` int(11) NOT NULL,
-  `nilai` varchar(3) NOT NULL,
+  `nilai3` varchar(3) NOT NULL,
   `status_lamaran` varchar(10) NOT NULL,
   `keterangan` varchar(128) NOT NULL,
   `alert` varchar(10) NOT NULL
@@ -568,8 +572,12 @@ CREATE TABLE `seleksi_3` (
 -- Dumping data for table `seleksi_3`
 --
 
-INSERT INTO `seleksi_3` (`id`, `np`, `nilai`, `status_lamaran`, `keterangan`, `alert`) VALUES
-(3, 19001, '', '', '', '');
+INSERT INTO `seleksi_3` (`id`, `np`, `nilai3`, `status_lamaran`, `keterangan`, `alert`) VALUES
+(3, 19001, '100', 'LANJUT', '', 'success'),
+(4, 19002, '90', 'LANJUT', '', 'success'),
+(5, 19003, '80', 'LANJUT', '', 'success'),
+(6, 19004, '70', 'LANJUT', '', 'success'),
+(7, 19005, '', 'GUGUR', '', 'danger');
 
 -- --------------------------------------------------------
 
@@ -580,10 +588,21 @@ INSERT INTO `seleksi_3` (`id`, `np`, `nilai`, `status_lamaran`, `keterangan`, `a
 CREATE TABLE `seleksi_4` (
   `id` int(11) NOT NULL,
   `np` int(11) NOT NULL,
+  `nilai4` varchar(3) NOT NULL,
   `status_lamaran` varchar(10) NOT NULL,
   `keterangan` varchar(128) NOT NULL,
   `alert` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `seleksi_4`
+--
+
+INSERT INTO `seleksi_4` (`id`, `np`, `nilai4`, `status_lamaran`, `keterangan`, `alert`) VALUES
+(1, 19001, '100', 'LANJUT', '', 'success'),
+(2, 19002, '90', 'LANJUT', '', 'success'),
+(3, 19003, '80', 'LANJUT', '', 'success'),
+(4, 19004, '', 'GUGUR', '', 'danger');
 
 -- --------------------------------------------------------
 
@@ -594,10 +613,20 @@ CREATE TABLE `seleksi_4` (
 CREATE TABLE `seleksi_5` (
   `id` int(11) NOT NULL,
   `np` int(11) NOT NULL,
+  `nilai5` varchar(3) NOT NULL,
   `status_lamaran` varchar(10) NOT NULL,
   `keterangan` varchar(128) NOT NULL,
   `alert` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `seleksi_5`
+--
+
+INSERT INTO `seleksi_5` (`id`, `np`, `nilai5`, `status_lamaran`, `keterangan`, `alert`) VALUES
+(1, 19001, '100', 'LANJUT', '', 'success'),
+(2, 19002, '70', 'LANJUT', '', 'success'),
+(3, 19003, '50', 'LANJUT', '', 'success');
 
 --
 -- Indexes for dumped tables
@@ -712,22 +741,22 @@ ALTER TABLE `seleksi_1`
 -- AUTO_INCREMENT for table `seleksi_2`
 --
 ALTER TABLE `seleksi_2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `seleksi_3`
 --
 ALTER TABLE `seleksi_3`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `seleksi_4`
 --
 ALTER TABLE `seleksi_4`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `seleksi_5`
 --
 ALTER TABLE `seleksi_5`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
