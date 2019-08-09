@@ -76,14 +76,14 @@
                 </div>
             </li>
 
-            <li class="nav-item <?php if (($this->uri->segment(2) == "seleksi_1") || ($this->uri->segment(2) == "seleksi_2")) {
+            <li class="nav-item <?php if (($this->uri->segment(2) == "seleksi_1") || ($this->uri->segment(2) == "seleksi_2") || ($this->uri->segment(2) == "seleksi_3") || ($this->uri->segment(2) == "seleksi_4") || ($this->uri->segment(2) == "seleksi_5")) {
                                     echo 'active';
                                 } ?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeleksi" aria-expanded="true" aria-controls="collapseSeleksi">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Hasil Seleksi</span>
                 </a>
-                <div id="collapseSeleksi" class="collapse <?php if (($this->uri->segment(2) == "seleksi_1") || ($this->uri->segment(2) == "seleksi_2")) {
+                <div id="collapseSeleksi" class="collapse <?php if (($this->uri->segment(2) == "seleksi_1") || ($this->uri->segment(2) == "seleksi_2") || ($this->uri->segment(2) == "seleksi_3") || ($this->uri->segment(2) == "seleksi_4") || ($this->uri->segment(2) == "seleksi_5")) {
                                                                 echo 'show';
                                                             } ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-light py-2 collapse-inner rounded">
@@ -99,9 +99,9 @@
                         <a class="collapse-item <?php if ($this->uri->segment(2) == "seleksi_4") {
                                                     echo 'active';
                                                 } ?>" href="<?= base_url('admin/seleksi_4'); ?>"><i class="fas fa-fw fa-user-tie"></i> Tes Tertulis</a>
-                        <a class="collapse-item <?php if ($this->uri->segment(2) == "seleksi_4") {
+                        <a class="collapse-item <?php if ($this->uri->segment(2) == "seleksi_5") {
                                                     echo 'active';
-                                                } ?>" href="<?= base_url('admin/seleksi_4'); ?>"><i class="fas fa-fw fa-user-tie"></i> Wawancara</a>
+                                                } ?>" href="<?= base_url('admin/seleksi_5'); ?>"><i class="fas fa-fw fa-user-tie"></i> Wawancara</a>
                         <a class="collapse-item <?php if ($this->uri->segment(2) == "seleksi_total") {
                                                     echo 'active';
                                                 } ?>" href="<?= base_url('admin/seleksi_total'); ?>"><i class="fas fa-fw fa-user-tie"></i> Hasil Total</a>

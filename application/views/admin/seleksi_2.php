@@ -28,7 +28,7 @@
                             <td style="vertical-align:middle;text-align:center;"><img style="width: 50px;" src="<?= base_url('assets/img/pasfoto/') . $p->pasfoto ?>"></td>
                             <td style="vertical-align:middle;text-align:center;"><?= $p->nama ?></td>
                             <td style="vertical-align:middle;text-align:center;"><?= $p->email ?></td>
-                            <td style="vertical-align:middle;text-align:center;"><?= $p->nilai ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->nilai2 ?></td>
                             <td style="vertical-align:middle;text-align:center;">
                                 <div class="btn-group"><a class="btn btn-danger" href="<?= base_url('admin/seleksi_2/remove/') . $p->id ?>"><i class="fa fa-lg fa-times"></i></a></div>
                             </td>

@@ -1,4 +1,4 @@
-<h1 class="h3 mb-2 text-gray-800">Praktek Lapangan</h1>
+<h1 class="h3 mb-2 text-gray-800">Wawancara</h1>
 
 <div class="card shadow mb-4">
     <div class="card-body">
@@ -28,9 +28,9 @@
                             <td style="vertical-align:middle;text-align:center;"><img style="width: 50px;" src="<?= base_url('assets/img/pasfoto/') . $p->pasfoto ?>"></td>
                             <td style="vertical-align:middle;text-align:center;"><?= $p->nama ?></td>
                             <td style="vertical-align:middle;text-align:center;"><?= $p->email ?></td>
-                            <td style="vertical-align:middle;text-align:center;"><?= $p->nilai3 ?></td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->nilai5 ?></td>
                             <td style="vertical-align:middle;text-align:center;">
-                                <div class="btn-group"><a class="btn btn-danger" href="<?= base_url('admin/seleksi_3/remove/') . $p->id ?>"><i class="fa fa-lg fa-times"></i></a></div>
+                                <div class="btn-group"><a class="btn btn-danger" href="<?= base_url('admin/seleksi_5/remove/') . $p->id ?>"><i class="fa fa-lg fa-times"></i></a></div>
                             </td>
                         </tr>
                     <?php } ?>
@@ -51,7 +51,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" action="<?= base_url('admin/seleksi_3/input'); ?>">
+                <form method="post" action="<?= base_url('admin/seleksi_5/input'); ?>">
                     <div class="form-row my-1">
                         <div class="col-5">
                             <input type="text" class="form-control" id="np1" name="np1" placeholder="Nomor Pendaftaran">
@@ -120,7 +120,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a class="btn btn-primary" href="<?= base_url('admin/seleksi_3/umumkan'); ?>">Umumkan</a>
+                <a class="btn btn-primary" href="<?= base_url('admin/seleksi_5/umumkan'); ?>">Umumkan</a>
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@ class Seleksi_2 extends CI_Controller
     {
         $data['judul'] = 'Hasil Pengalaman Kerja | Recruitment PPSU Cipinang';
         $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata['email']])->row_array();
-        $query = "SELECT `pelamar`.*, `seleksi_2`.`status_lamaran`, `seleksi_2`.`nilai`
+        $query = "SELECT `pelamar`.*, `seleksi_2`.`status_lamaran`, `seleksi_2`.`nilai2`
                     FROM `pelamar` JOIN `seleksi_2`
                       ON `pelamar`.`id` = `seleksi_2`.`np`";
         $data['pelamar'] = $this->db->query($query)->result();
@@ -36,7 +36,7 @@ class Seleksi_2 extends CI_Controller
         $cek_np1 = $this->db->get_where('seleksi_3', ['np' => $np1]);
         if (!empty($np1)) {
             $data1 = [
-                'nilai' => $nilai1,
+                'nilai2' => $nilai1,
                 'status_lamaran' => 'LANJUT',
                 'alert' => 'success'
             ];
@@ -55,7 +55,7 @@ class Seleksi_2 extends CI_Controller
         $cek_np2 = $this->db->get_where('seleksi_3', ['np' => $np2]);
         if (!empty($np2)) {
             $data2 = [
-                'nilai' => $nilai2,
+                'nilai2' => $nilai2,
                 'status_lamaran' => 'LANJUT',
                 'alert' => 'success'
             ];
@@ -74,7 +74,7 @@ class Seleksi_2 extends CI_Controller
         $cek_np3 = $this->db->get_where('seleksi_3', ['np' => $np3]);
         if (!empty($np3)) {
             $data3 = [
-                'nilai' => $nilai3,
+                'nilai2' => $nilai3,
                 'status_lamaran' => 'LANJUT',
                 'alert' => 'success'
             ];
@@ -93,7 +93,7 @@ class Seleksi_2 extends CI_Controller
         $cek_np4 = $this->db->get_where('seleksi_3', ['np' => $np4]);
         if (!empty($np4)) {
             $data4 = [
-                'nilai' => $nilai4,
+                'nilai2' => $nilai4,
                 'status_lamaran' => 'LANJUT',
                 'alert' => 'success'
             ];
@@ -112,7 +112,7 @@ class Seleksi_2 extends CI_Controller
         $cek_np5 = $this->db->get_where('seleksi_3', ['np' => $np5]);
         if (!empty($np5)) {
             $data5 = [
-                'nilai' => $nilai5,
+                'nilai2' => $nilai5,
                 'status_lamaran' => 'LANJUT',
                 'alert' => 'success'
             ];

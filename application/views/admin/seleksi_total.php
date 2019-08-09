@@ -1,39 +1,56 @@
-<h1 class="h3 mb-2 text-gray-800">Praktek Lapangan</h1>
+<h1 class="h3 mb-2 text-gray-800">Hasil Total</h1>
 
 <div class="card shadow mb-4">
     <div class="card-body">
         <?= $this->session->flashdata('pesan'); ?>
         <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#Umumkan">Umumkan</a>
-        <a href="#" class="btn btn-success mb-2" data-toggle="modal" data-target="#InputNilai">Masukkan Nilai</a>
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-sm small text-dark" id="Seleksi1" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>No.</th>
+                        <th>Np.</th>
                         <th>Foto</th>
                         <th>Nama</th>
-                        <th>Email</th>
-                        <th>Nilai</th>
+                        <th>Administrasi<br> (bobot 10%)</th>
+                        <th>Pengalaman Kerja<br> (bobot 20%)</th>
+                        <th>Praktik Lap.<br> (bobot 40%)</th>
+                        <th>Tes Tertulis<br> (bobot 10%)</th>
+                        <th>Wawancara<br> (bobot 20%)</th>
+                        <th>Hasil (%)</th>
                         <th>Tindakan</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($pelamar as $p) { ?>
+                    <?php $no = 1;
+                    foreach ($pelamar as $p) {
+                        $n1 = 10;
+                        $n2 = ($p->nilai2 * 20) / 100;
+                        $n3 = ($p->nilai3 * 40) / 100;
+                        $n4 = ($p->nilai4 * 10) / 100;
+                        $n5 = ($p->nilai5 * 20) / 100; ?>
                         <tr style="<?php if ($p->status_lamaran == 'LANJUT') {
                                         echo 'background-color:#a8e6a5;';
                                     } elseif ($p->status_lamaran == 'GUGUR') {
                                         echo 'background-color:#edbebe;';
                                     } ?>">
+                            <td style="vertical-align:middle;text-align:center;"><?= $no ?></td>
                             <td style="vertical-align:middle;text-align:center;"><?= $p->id ?></td>
                             <td style="vertical-align:middle;text-align:center;"><img style="width: 50px;" src="<?= base_url('assets/img/pasfoto/') . $p->pasfoto ?>"></td>
                             <td style="vertical-align:middle;text-align:center;"><?= $p->nama ?></td>
-                            <td style="vertical-align:middle;text-align:center;"><?= $p->email ?></td>
-                            <td style="vertical-align:middle;text-align:center;"><?= $p->nilai3 ?></td>
+                            <td style="vertical-align:middle;text-align:center;">100 (<?= $n1 ?>%)</td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->nilai2 ?> (<?= $n2 ?>%)</td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->nilai3 ?> (<?= $n3 ?>%)</td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->nilai4 ?> (<?= $n4 ?>%)</td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $p->nilai5 ?> (<?= $n5 ?>%)</td>
+                            <td style="vertical-align:middle;text-align:center;"><?= $n1 + $n2 + $n3 + $n4 + $n5; ?>
+                            </td>
                             <td style="vertical-align:middle;text-align:center;">
-                                <div class="btn-group"><a class="btn btn-danger" href="<?= base_url('admin/seleksi_3/remove/') . $p->id ?>"><i class="fa fa-lg fa-times"></i></a></div>
+                                <div class="btn-group"><a class="btn btn-danger" href="<?= base_url('admin/seleksi_5/remove/') . $p->id ?>"><i class="fa fa-lg fa-times"></i></a></div>
                             </td>
                         </tr>
-                    <?php } ?>
+                        <?php $no++;
+                    } ?>
                 </tbody>
             </table>
         </div>
@@ -51,7 +68,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" action="<?= base_url('admin/seleksi_3/input'); ?>">
+                <form method="post" action="<?= base_url('admin/seleksi_5/input'); ?>">
                     <div class="form-row my-1">
                         <div class="col-5">
                             <input type="text" class="form-control" id="np1" name="np1" placeholder="Nomor Pendaftaran">
@@ -120,7 +137,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a class="btn btn-primary" href="<?= base_url('admin/seleksi_3/umumkan'); ?>">Umumkan</a>
+                <a class="btn btn-primary" href="<?= base_url('admin/seleksi_5/umumkan'); ?>">Umumkan</a>
             </div>
         </div>
     </div>
