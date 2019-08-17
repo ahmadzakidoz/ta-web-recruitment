@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/'); ?>css/style.css" rel="stylesheet">
 
 </head>
 
@@ -24,7 +25,7 @@
     <div class="fixed-top bg-white">
         <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4">
             <div class="container">
-                <a class="navbar-brand" href="<?= base_url(); ?>">RECRUITMENT PPSU</a>
+                <a class="navbar-brand" href="<?= base_url(); ?>"><img style="margin: -50px auto;height:80px;" src="<?= base_url('assets/img/logo.png') ?>" alt=""> RECRUITMENT PPSU</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

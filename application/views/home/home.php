@@ -7,25 +7,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://source.unsplash.com/LAaSoL0LrYs/1920x1080" class="d-block w-100" style="height: 550px;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
+                <img src="<?= base_url('assets/img/slide1.jpeg') ?>" class="d-block w-100 slide" style="height: 550px;">
             </div>
             <div class="carousel-item">
-                <img src="https://source.unsplash.com/bF2vsubyHcQ/1920x1080" class="d-block w-100" style="height: 550px;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
+                <img src="<?= base_url('assets/img/slide2.jpeg') ?>" class="d-block w-100" style="height: 550px;">
             </div>
             <div class="carousel-item">
-                <img src="https://source.unsplash.com/szFUQoyvrxM/1920x1080" class="d-block w-100" style="height: 550px;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
+                <img src="<?= base_url('assets/img/slide3.jpeg') ?>" class="d-block w-100" style="height: 550px;">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -36,6 +24,10 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+        <div class="intro">
+            <h1>Selamat Datang Di Website Recruitment PPSU CIPINANG</h1>
+            <p>Ayo Bersama Kita Jadikan Kelurahan Cipinang Jadi Lebih Indah.</p>
+        </div>
     </div>
 </div>
 <hr style="margin-top: 2px;margin-bottom: 0px; border-width: thin; border-style: double; border-color: #F08200;">

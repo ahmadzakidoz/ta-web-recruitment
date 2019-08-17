@@ -11,6 +11,12 @@ class User extends CI_Controller
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Silahkan login terlebih dahulu!</div>');
             redirect('home/login');
         }
+        $ip = $this->input->server('REMOTE_ADDR');
+        $cek_ip = $this->db->query("SELECT * FROM visitor WHERE ip='$ip' AND DATE(tanggal)=CURDATE()");
+        if ($cek_ip->num_rows() <= 0) {
+            $this->db->set('ip', $ip);
+            $this->db->insert('visitor');
+        }
     }
 
     public function index()

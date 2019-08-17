@@ -3,6 +3,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Pengumuman extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+
+        $ip = $this->input->server('REMOTE_ADDR');
+        $cek_ip = $this->db->query("SELECT * FROM visitor WHERE ip='$ip' AND DATE(tanggal)=CURDATE()");
+        if ($cek_ip->num_rows() <= 0) {
+            $this->db->set('ip', $ip);
+            $this->db->insert('visitor');
+        }
+    }
 
     public function index()
     {
