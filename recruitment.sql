@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2019 at 04:32 AM
+-- Generation Time: Aug 17, 2019 at 09:18 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -417,7 +417,7 @@ INSERT INTO `kota` (`id`, `kota`) VALUES
 
 CREATE TABLE `pelamar` (
   `id` int(11) NOT NULL,
-  `tgl_daftar` int(11) NOT NULL,
+  `tgl_daftar` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `password` varchar(256) NOT NULL,
   `aktivasi` int(1) NOT NULL,
   `email` varchar(128) NOT NULL,
@@ -463,16 +463,16 @@ CREATE TABLE `pelamar` (
 --
 
 INSERT INTO `pelamar` (`id`, `tgl_daftar`, `password`, `aktivasi`, `email`, `nama`, `nkk`, `nik`, `alamat`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `tmp_lahir`, `tgl_lahir`, `jns_kelamin`, `agama`, `status`, `telp`, `pasfoto`, `jenjang`, `sekolah`, `jurusan`, `keterangan`, `thn_lulus`, `nilai`, `akreditasi`, `lamaran`, `cv`, `ktp`, `ijazah`, `kk`, `npwp`, `kesehatan`, `spk`, `dok_pendukung1`, `dok_pendukung2`, `dok_pendukung3`, `dok_pendukung4`, `status_lamaran`) VALUES
-(19001, 1563247110, '$2y$10$ClrJgvvDs/yUVVZOE7yYMeDHD4Z3Zu/CJr6.VLIgvqmWMaNE4d3mm', 1, 'ahmadzaki.doz@gmail.com', 'Ahmad Zaki', '31712345678', '3175021207942010', 'Jl. R1 No. 29', 'DKI Jakarta', 'JAKARTA SELATAN', 'TEBET', 'KEBON BARU', 'Jakarta', '09/10/1998', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'D3', 'Bina Sarana Informatika', 'SISTEM INFORMASI (MANAJEMEN INFORMATIKA)', '', '2019', '4', 'A', 'Contoh_Dokumen.pdf', 'Contoh_Dokumen1.pdf', 'Contoh_Dokumen2.pdf', 'Contoh_Dokumen3.pdf', 'Contoh_Dokumen4.pdf', 'Contoh_Dokumen5.pdf', 'Contoh_Dokumen6.pdf', 'Contoh_Dokumen7.pdf', 'Contoh_Dokumen8.pdf', 'Contoh_Dokumen9.pdf', 'Contoh_Dokumen10.pdf', 'Contoh_Dokumen11.pdf', ''),
-(19002, 1563426381, '$2y$10$bawUYbh.TfJqd9jv1crgt.plbHNjf7QI02wNlhh.yBFSrZonP.IzS', 1, 'wariswidodo@gmail.com', 'Waris Widodo', '31709092090', '31750212079', 'Jl. R1 No. 30', 'DKI Jakarta', 'JAKARTA TIMUR', 'PULO GADUNG', 'CIPINANG', 'Jakarta', '07/03/2000', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'SLTA', 'SMA Negeri 8 Jakarta', 'ILMU PENGETAHUAN ALAM', '', '2019', '8', 'A', 'Contoh_Dokumen12.pdf', 'Contoh_Dokumen13.pdf', 'Contoh_Dokumen14.pdf', 'Contoh_Dokumen15.pdf', 'Contoh_Dokumen16.pdf', 'Contoh_Dokumen17.pdf', 'Contoh_Dokumen18.pdf', 'Contoh_Dokumen19.pdf', 'Contoh_Dokumen20.pdf', 'Contoh_Dokumen21.pdf', 'Contoh_Dokumen22.pdf', 'Contoh_Dokumen23.pdf', ''),
-(19003, 1563427018, '$2y$10$OpltP5/95bjN6CHRphrCGeDMt0OAb3gXLazBxM563G7FMvBXbcCnK', 1, 'wawanwahyu@gmail.com', 'Wawan Wahyu', '31709280019', '12345678909', 'Jl. R1 No. 31', 'DKI Jakarta', 'JAKARTA SELATAN', 'CILANDAK', 'PONDOK LABU', 'Jakarta', '07/14/1999', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'SLTA', 'SMA Negeri 8 Jakarta', 'ILMU PENGETAHUAN SOSIAL', '', '2019', '8', 'A', 'Contoh_Dokumen24.pdf', 'Contoh_Dokumen25.pdf', 'Contoh_Dokumen26.pdf', 'Contoh_Dokumen27.pdf', 'Contoh_Dokumen28.pdf', 'Contoh_Dokumen29.pdf', 'Contoh_Dokumen30.pdf', 'Contoh_Dokumen31.pdf', 'Contoh_Dokumen32.pdf', 'Contoh_Dokumen33.pdf', 'Contoh_Dokumen34.pdf', 'Contoh_Dokumen35.pdf', ''),
-(19004, 1563427654, '$2y$10$rFMB2L8vm8Wr/oq8QebcPecanTlT.uQWfHnmLrGw0IBW.24tCqrQC', 1, 'zaenudin@gmail.com', 'Zaenudin', '31727369292', '12345678909', 'Jl. R1 No. 32', 'DKI Jakarta', 'JAKARTA BARAT', 'PALMERAH', 'KOTA BAMBU SELATAN', 'Lampung', '09/10/1998', 'PRIA', 'ISLAM', 'MENIKAH', '082297016045', 'user.png', 'D3', 'Bina Sarana Informatika', 'MANAJEMEN INFORMATIKA', '', '2015', '3.9', 'B', 'Contoh_Dokumen36.pdf', 'Contoh_Dokumen37.pdf', 'Contoh_Dokumen38.pdf', 'Contoh_Dokumen39.pdf', 'Contoh_Dokumen40.pdf', 'Contoh_Dokumen41.pdf', 'Contoh_Dokumen42.pdf', 'Contoh_Dokumen43.pdf', 'Contoh_Dokumen44.pdf', 'Contoh_Dokumen45.pdf', 'Contoh_Dokumen46.pdf', 'Contoh_Dokumen47.pdf', ''),
-(19005, 1563427952, '$2y$10$ThblVTWiwVE4gC0LUez9B.CeWCNzbX7eZszAcCyYvhpVP5ytRromy', 1, 'zainuddin@gmail.com', 'Zainuddin', '31727369292', '12345678909', 'Jl. R1 No. 33', 'DKI Jakarta', 'JAKARTA SELATAN', 'PASAR MINGGU', 'JATI PADANG', 'Jakarta', '03/11/1993', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'SLTA', 'SMA Negeri 8 Jakarta', 'ILMU PENGETAHUAN SOSIAL', '', '2015', '7', 'B', 'Contoh_Dokumen48.pdf', 'Contoh_Dokumen49.pdf', 'Contoh_Dokumen50.pdf', 'Contoh_Dokumen51.pdf', 'Contoh_Dokumen52.pdf', 'Contoh_Dokumen53.pdf', 'Contoh_Dokumen54.pdf', 'Contoh_Dokumen55.pdf', 'Contoh_Dokumen56.pdf', 'Contoh_Dokumen57.pdf', 'Contoh_Dokumen58.pdf', 'Contoh_Dokumen59.pdf', ''),
-(19006, 1563428178, '$2y$10$twzxws3ybkBr.y/AFDlVCOV4MsAZkiwrAoxsOoDCxL6TzjtwrM.xe', 1, 'suryawijaya@gmail.com', 'Haedar Surya Wijaya', '31727369292', '12345678909', 'Jl. R1 No. 34', 'DKI Jakarta', 'JAKARTA PUSAT', 'JOHAR BARU', 'KAMPUNG RAWA', 'Jakarta', '09/10/1998', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'SLTA', 'SMA Negeri 37 Jakarta', 'ILMU PENGETAHUAN ALAM', '', '2019', '8', 'A', 'Contoh_Dokumen60.pdf', 'Contoh_Dokumen61.pdf', 'Contoh_Dokumen62.pdf', 'Contoh_Dokumen63.pdf', 'Contoh_Dokumen64.pdf', 'Contoh_Dokumen65.pdf', 'Contoh_Dokumen66.pdf', 'Contoh_Dokumen67.pdf', 'Contoh_Dokumen68.pdf', 'Contoh_Dokumen69.pdf', 'Contoh_Dokumen70.pdf', 'Contoh_Dokumen71.pdf', ''),
-(19007, 1563428627, '$2y$10$sasoSDFvKgYypBSuJmY6VOlJVOV.ZRCl5lnhwjHFv/w8m1ScOndxy', 1, 'aldiabdulah@gmail.com', 'Aldi Abdulah', '31727369292', '12345678909', 'Jl. R1 No. 35', 'DKI Jakarta', 'JAKARTA PUSAT', 'MENTENG', 'GONDANGDIA', 'Jakarta', '03/16/1993', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'SLTA', 'SMA Negeri 8 Jakarta', 'ILMU PENGETAHUAN BAHASA', '', '2019', '7', 'C', 'Contoh_Dokumen72.pdf', 'Contoh_Dokumen73.pdf', 'Contoh_Dokumen74.pdf', 'Contoh_Dokumen75.pdf', 'Contoh_Dokumen76.pdf', 'Contoh_Dokumen77.pdf', 'Contoh_Dokumen78.pdf', 'Contoh_Dokumen79.pdf', 'Contoh_Dokumen80.pdf', 'Contoh_Dokumen81.pdf', 'Contoh_Dokumen82.pdf', 'Contoh_Dokumen83.pdf', ''),
-(19008, 1563428940, '$2y$10$rd2MXxB.JqlFgZHMUBQRkenrrLS2gD9YOmCYqUTc8pFkbSwm8JGt.', 1, 'dedesuryaman@gmail.com', 'Dede suryaman', '31727369292', '12345678909', 'Jl. R1 No. 36', 'DKI Jakarta', 'JAKARTA UTARA', 'PENJARINGAN', 'KAMAL MUARA', 'Jakarta', '09/21/1998', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'S1', 'Universitas indonesia', 'KEBIDANAN', '', '2019', '4', 'A', 'Contoh_Dokumen84.pdf', 'Contoh_Dokumen85.pdf', 'Contoh_Dokumen86.pdf', 'Contoh_Dokumen87.pdf', 'Contoh_Dokumen88.pdf', 'Contoh_Dokumen89.pdf', 'Contoh_Dokumen90.pdf', 'Contoh_Dokumen91.pdf', 'Contoh_Dokumen92.pdf', 'Contoh_Dokumen93.pdf', 'Contoh_Dokumen94.pdf', 'Contoh_Dokumen95.pdf', ''),
-(19009, 1563429228, '$2y$10$klLph81V1DLId0ksqFtLnOq6RG8EuKHfPoeSiRo2LAMQyJ8BF9LaK', 1, 'sutini@gmail.com', 'Sutini', '31727369292', '12345678909', 'Jl. R1 No. 37', 'DKI Jakarta', 'JAKARTA PUSAT', 'JOHAR BARU', 'KAMPUNG RAWA', 'Jakarta', '07/15/1999', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'D3', 'Bina Sarana Informatika', 'TEKNIK INFORMATIKA', '', '2019', '3.9', 'B', 'Contoh_Dokumen_(1).pdf', 'Contoh_Dokumen_(1)1.pdf', 'Contoh_Dokumen_(1)2.pdf', 'Contoh_Dokumen_(1)3.pdf', 'Contoh_Dokumen_(1)4.pdf', 'Contoh_Dokumen_(1)5.pdf', 'Contoh_Dokumen_(1)6.pdf', 'Contoh_Dokumen_(1)7.pdf', 'Contoh_Dokumen_(1)8.pdf', 'Contoh_Dokumen_(1)9.pdf', 'Contoh_Dokumen_(1)10.pdf', 'Contoh_Dokumen_(1)11.pdf', ''),
-(19010, 1563430187, '$2y$10$f5hdG57.i6j4BNTEHKIGquZZbz1DZhYusKpgRpobBpc2GkFkTM9Qi', 1, 'imamsantoso@gmail.com', 'Imam Santoso', '31727369292', '12345678909', 'Jl. R1 No. 38', 'DKI Jakarta', 'JAKARTA UTARA', 'KELAPA GADING', 'KELAPA GADING BARAT', 'Jakarta', '07/09/1999', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'D3', 'Bina Sarana Informatika', 'KEDOKTERAN HEWAN', '', '2019', '3.9', 'A', 'Contoh_Dokumen_(1)12.pdf', 'Contoh_Dokumen_(1)13.pdf', 'Contoh_Dokumen_(1)14.pdf', 'Contoh_Dokumen_(1)15.pdf', 'Contoh_Dokumen_(1)16.pdf', 'Contoh_Dokumen_(1)17.pdf', 'Contoh_Dokumen_(1)18.pdf', 'Contoh_Dokumen_(1)19.pdf', 'Contoh_Dokumen_(1)20.pdf', 'Contoh_Dokumen_(1)21.pdf', 'Contoh_Dokumen_(1)22.pdf', 'Contoh_Dokumen_(1)23.pdf', '');
+(19001, '2019-07-15 17:00:00', '$2y$10$ClrJgvvDs/yUVVZOE7yYMeDHD4Z3Zu/CJr6.VLIgvqmWMaNE4d3mm', 1, 'ahmadzaki.doz@gmail.com', 'Ahmad Zaki', '31712345678', '3175021207942010', 'Jl. R1 No. 29', 'DKI Jakarta', 'JAKARTA SELATAN', 'TEBET', 'KEBON BARU', 'Jakarta', '09/10/1998', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'D3', 'Bina Sarana Informatika', 'SISTEM INFORMASI (MANAJEMEN INFORMATIKA)', '', '2019', '4', 'A', 'Contoh_Dokumen.pdf', 'Contoh_Dokumen1.pdf', 'Contoh_Dokumen2.pdf', 'Contoh_Dokumen3.pdf', 'Contoh_Dokumen4.pdf', 'Contoh_Dokumen5.pdf', 'Contoh_Dokumen6.pdf', 'Contoh_Dokumen7.pdf', 'Contoh_Dokumen8.pdf', 'Contoh_Dokumen9.pdf', 'Contoh_Dokumen10.pdf', 'Contoh_Dokumen11.pdf', ''),
+(19002, '2019-07-17 17:00:00', '$2y$10$bawUYbh.TfJqd9jv1crgt.plbHNjf7QI02wNlhh.yBFSrZonP.IzS', 1, 'wariswidodo@gmail.com', 'Waris Widodo', '31709092090', '31750212079', 'Jl. R1 No. 30', 'DKI Jakarta', 'JAKARTA TIMUR', 'PULO GADUNG', 'CIPINANG', 'Jakarta', '07/03/2000', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'SLTA', 'SMA Negeri 8 Jakarta', 'ILMU PENGETAHUAN ALAM', '', '2019', '8', 'A', 'Contoh_Dokumen12.pdf', 'Contoh_Dokumen13.pdf', 'Contoh_Dokumen14.pdf', 'Contoh_Dokumen15.pdf', 'Contoh_Dokumen16.pdf', 'Contoh_Dokumen17.pdf', 'Contoh_Dokumen18.pdf', 'Contoh_Dokumen19.pdf', 'Contoh_Dokumen20.pdf', 'Contoh_Dokumen21.pdf', 'Contoh_Dokumen22.pdf', 'Contoh_Dokumen23.pdf', ''),
+(19003, '2019-07-17 17:00:00', '$2y$10$OpltP5/95bjN6CHRphrCGeDMt0OAb3gXLazBxM563G7FMvBXbcCnK', 1, 'wawanwahyu@gmail.com', 'Wawan Wahyu', '31709280019', '12345678909', 'Jl. R1 No. 31', 'DKI Jakarta', 'JAKARTA SELATAN', 'CILANDAK', 'PONDOK LABU', 'Jakarta', '07/14/1999', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'SLTA', 'SMA Negeri 8 Jakarta', 'ILMU PENGETAHUAN SOSIAL', '', '2019', '8', 'A', 'Contoh_Dokumen24.pdf', 'Contoh_Dokumen25.pdf', 'Contoh_Dokumen26.pdf', 'Contoh_Dokumen27.pdf', 'Contoh_Dokumen28.pdf', 'Contoh_Dokumen29.pdf', 'Contoh_Dokumen30.pdf', 'Contoh_Dokumen31.pdf', 'Contoh_Dokumen32.pdf', 'Contoh_Dokumen33.pdf', 'Contoh_Dokumen34.pdf', 'Contoh_Dokumen35.pdf', ''),
+(19004, '2019-07-17 17:00:00', '$2y$10$rFMB2L8vm8Wr/oq8QebcPecanTlT.uQWfHnmLrGw0IBW.24tCqrQC', 1, 'zaenudin@gmail.com', 'Zaenudin', '31727369292', '12345678909', 'Jl. R1 No. 32', 'DKI Jakarta', 'JAKARTA BARAT', 'PALMERAH', 'KOTA BAMBU SELATAN', 'Lampung', '09/10/1998', 'PRIA', 'ISLAM', 'MENIKAH', '082297016045', 'user.png', 'D3', 'Bina Sarana Informatika', 'MANAJEMEN INFORMATIKA', '', '2015', '3.9', 'B', 'Contoh_Dokumen36.pdf', 'Contoh_Dokumen37.pdf', 'Contoh_Dokumen38.pdf', 'Contoh_Dokumen39.pdf', 'Contoh_Dokumen40.pdf', 'Contoh_Dokumen41.pdf', 'Contoh_Dokumen42.pdf', 'Contoh_Dokumen43.pdf', 'Contoh_Dokumen44.pdf', 'Contoh_Dokumen45.pdf', 'Contoh_Dokumen46.pdf', 'Contoh_Dokumen47.pdf', ''),
+(19005, '2019-07-17 17:00:00', '$2y$10$ThblVTWiwVE4gC0LUez9B.CeWCNzbX7eZszAcCyYvhpVP5ytRromy', 1, 'zainuddin@gmail.com', 'Zainuddin', '31727369292', '12345678909', 'Jl. R1 No. 33', 'DKI Jakarta', 'JAKARTA SELATAN', 'PASAR MINGGU', 'JATI PADANG', 'Jakarta', '03/11/1993', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'SLTA', 'SMA Negeri 8 Jakarta', 'ILMU PENGETAHUAN SOSIAL', '', '2015', '7', 'B', 'Contoh_Dokumen48.pdf', 'Contoh_Dokumen49.pdf', 'Contoh_Dokumen50.pdf', 'Contoh_Dokumen51.pdf', 'Contoh_Dokumen52.pdf', 'Contoh_Dokumen53.pdf', 'Contoh_Dokumen54.pdf', 'Contoh_Dokumen55.pdf', 'Contoh_Dokumen56.pdf', 'Contoh_Dokumen57.pdf', 'Contoh_Dokumen58.pdf', 'Contoh_Dokumen59.pdf', ''),
+(19006, '2019-08-14 17:00:00', '$2y$10$twzxws3ybkBr.y/AFDlVCOV4MsAZkiwrAoxsOoDCxL6TzjtwrM.xe', 1, 'suryawijaya@gmail.com', 'Haedar Surya Wijaya', '31727369292', '12345678909', 'Jl. R1 No. 34', 'DKI Jakarta', 'JAKARTA PUSAT', 'JOHAR BARU', 'KAMPUNG RAWA', 'Jakarta', '09/10/1998', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'SLTA', 'SMA Negeri 37 Jakarta', 'ILMU PENGETAHUAN ALAM', '', '2019', '8', 'A', 'Contoh_Dokumen60.pdf', 'Contoh_Dokumen61.pdf', 'Contoh_Dokumen62.pdf', 'Contoh_Dokumen63.pdf', 'Contoh_Dokumen64.pdf', 'Contoh_Dokumen65.pdf', 'Contoh_Dokumen66.pdf', 'Contoh_Dokumen67.pdf', 'Contoh_Dokumen68.pdf', 'Contoh_Dokumen69.pdf', 'Contoh_Dokumen70.pdf', 'Contoh_Dokumen71.pdf', ''),
+(19007, '2019-08-13 17:00:00', '$2y$10$sasoSDFvKgYypBSuJmY6VOlJVOV.ZRCl5lnhwjHFv/w8m1ScOndxy', 1, 'aldiabdulah@gmail.com', 'Aldi Abdulah', '31727369292', '12345678909', 'Jl. R1 No. 35', 'DKI Jakarta', 'JAKARTA PUSAT', 'MENTENG', 'GONDANGDIA', 'Jakarta', '03/16/1993', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'SLTA', 'SMA Negeri 8 Jakarta', 'ILMU PENGETAHUAN BAHASA', '', '2019', '7', 'C', 'Contoh_Dokumen72.pdf', 'Contoh_Dokumen73.pdf', 'Contoh_Dokumen74.pdf', 'Contoh_Dokumen75.pdf', 'Contoh_Dokumen76.pdf', 'Contoh_Dokumen77.pdf', 'Contoh_Dokumen78.pdf', 'Contoh_Dokumen79.pdf', 'Contoh_Dokumen80.pdf', 'Contoh_Dokumen81.pdf', 'Contoh_Dokumen82.pdf', 'Contoh_Dokumen83.pdf', ''),
+(19008, '2019-08-07 17:00:00', '$2y$10$rd2MXxB.JqlFgZHMUBQRkenrrLS2gD9YOmCYqUTc8pFkbSwm8JGt.', 1, 'dedesuryaman@gmail.com', 'Dede suryaman', '31727369292', '12345678909', 'Jl. R1 No. 36', 'DKI Jakarta', 'JAKARTA UTARA', 'PENJARINGAN', 'KAMAL MUARA', 'Jakarta', '09/21/1998', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'S1', 'Universitas indonesia', 'KEBIDANAN', '', '2019', '4', 'A', 'Contoh_Dokumen84.pdf', 'Contoh_Dokumen85.pdf', 'Contoh_Dokumen86.pdf', 'Contoh_Dokumen87.pdf', 'Contoh_Dokumen88.pdf', 'Contoh_Dokumen89.pdf', 'Contoh_Dokumen90.pdf', 'Contoh_Dokumen91.pdf', 'Contoh_Dokumen92.pdf', 'Contoh_Dokumen93.pdf', 'Contoh_Dokumen94.pdf', 'Contoh_Dokumen95.pdf', ''),
+(19009, '2019-08-06 17:00:00', '$2y$10$klLph81V1DLId0ksqFtLnOq6RG8EuKHfPoeSiRo2LAMQyJ8BF9LaK', 1, 'sutini@gmail.com', 'Sutini', '31727369292', '12345678909', 'Jl. R1 No. 37', 'DKI Jakarta', 'JAKARTA PUSAT', 'JOHAR BARU', 'KAMPUNG RAWA', 'Jakarta', '07/15/1999', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'D3', 'Bina Sarana Informatika', 'TEKNIK INFORMATIKA', '', '2019', '3.9', 'B', 'Contoh_Dokumen_(1).pdf', 'Contoh_Dokumen_(1)1.pdf', 'Contoh_Dokumen_(1)2.pdf', 'Contoh_Dokumen_(1)3.pdf', 'Contoh_Dokumen_(1)4.pdf', 'Contoh_Dokumen_(1)5.pdf', 'Contoh_Dokumen_(1)6.pdf', 'Contoh_Dokumen_(1)7.pdf', 'Contoh_Dokumen_(1)8.pdf', 'Contoh_Dokumen_(1)9.pdf', 'Contoh_Dokumen_(1)10.pdf', 'Contoh_Dokumen_(1)11.pdf', ''),
+(19010, '2019-08-14 17:00:00', '$2y$10$f5hdG57.i6j4BNTEHKIGquZZbz1DZhYusKpgRpobBpc2GkFkTM9Qi', 1, 'imamsantoso@gmail.com', 'Imam Santoso', '31727369292', '12345678909', 'Jl. R1 No. 38', 'DKI Jakarta', 'JAKARTA UTARA', 'KELAPA GADING', 'KELAPA GADING BARAT', 'Jakarta', '07/09/1999', 'PRIA', 'ISLAM', 'LAJANG', '082297016045', 'user.png', 'D3', 'Bina Sarana Informatika', 'KEDOKTERAN HEWAN', '', '2019', '3.9', 'A', 'Contoh_Dokumen_(1)12.pdf', 'Contoh_Dokumen_(1)13.pdf', 'Contoh_Dokumen_(1)14.pdf', 'Contoh_Dokumen_(1)15.pdf', 'Contoh_Dokumen_(1)16.pdf', 'Contoh_Dokumen_(1)17.pdf', 'Contoh_Dokumen_(1)18.pdf', 'Contoh_Dokumen_(1)19.pdf', 'Contoh_Dokumen_(1)20.pdf', 'Contoh_Dokumen_(1)21.pdf', 'Contoh_Dokumen_(1)22.pdf', 'Contoh_Dokumen_(1)23.pdf', '');
 
 -- --------------------------------------------------------
 
@@ -495,7 +495,8 @@ CREATE TABLE `pengumuman` (
 INSERT INTO `pengumuman` (`id`, `judul`, `isi`, `gambar`, `tanggal`) VALUES
 (1, 'tes', '<p>tes</p>\r\n', '', '2019-06-21 15:37:11'),
 (2, 'Pengumuman Ujian Akhir Semester Genap 2018-2019', '<p>Sehubungan dengan akan dilaksanakannya Ujian Akhir Semester (UAS) Semester Genap Tahun Akademik 2018/2019, maka kepada seluruh civitas akademik Universitas Bina Sarana Informatika (UBSI) memperhatikan :</p>\r\n\r\n<p>1. Kuliah praktikum maupun teori berakhir pada Jumat, 5 Juli 2019.</p>\r\n\r\n<p>2. Pelaksanaan ujian praktikum maupun teori yang dilakukan secara online di ruang kuliah melalui fasilitas Intranet pada laman http://kampus.id maupun Internet pada laman <a href="http://www.bsi.ac.id">http://www.bsi.ac.id</a> dimulai pada tanggal 8 s/d 20 Juli 2019.</p>\r\n\r\n<p>3. Teknis pelaksanaan ujian adalah :</p>\r\n\r\n<ul>\r\n	<li>a. Jadwal pelaksanaan ujian baik yang dilakukan secara offline maupun online (melalui fasilitas Intranet pada laman http://mahasiswa.kampus.id maupun Internet pada laman http://students.bsi.ac.id dimulai pada tanggal 8 s/d 20 Juli 2019.</li>\r\n	<li>b. Jadwal pelaksanaan ujian online melalui Internet pada laman http://students.bsi.ac.id untuk mata kuliah : Pengantar Teknologi Informasi (PTIK), Pendidikan Kewarganegaraan, Bahasa Indonesia, Mobile Commerce, Sociolinguistic, Applied Linguistics, Semantics and Pragmatics, Material Development ujian dilaksanakan pada tanggal 8 s/d 20 Juli 2019 dan mahasiswa dapat bebas memilih jadwal ujian yang diselenggarakan.</li>\r\n	<li>c. Lama waktu pelaksanaan ujian adalah selama 60 menit untuk seluruh mata dengan bobot 2, 3 maupun 4 sks. Khusus bagi mahasiswa Program Studi Administrasi Pekantoran, Bahasa Inggris, Manajemen Pajak dan Akuntansi pelaksanaan ujian teori untuk mata kuliah : English for Business, Interpreting, Social Conversation, Debating, Lab. Akuntansi Dasar, Lab. Akuntansi Keuangan Dasar pelaksanaan ujian mata kuliah tersebut membutuhkan waktu selama 120 menit (2 jam).</li>\r\n</ul>\r\n', '', '2019-06-21 17:56:48'),
-(3, 'Hasil Seleksi Calon Anggota PPSU Cipinang 2019', '<p><em>-- isi pengumuman --</em></p>\r\n', '', '2019-07-08 04:37:49');
+(3, 'Hasil Seleksi Calon Anggota PPSU Cipinang 2019', '<p><em>-- isi pengumuman --</em></p>\r\n', '', '2019-07-08 04:37:49'),
+(5, 'tes', '', '', '2019-08-15 07:58:19');
 
 -- --------------------------------------------------------
 
@@ -628,6 +629,25 @@ INSERT INTO `seleksi_5` (`id`, `np`, `nilai5`, `status_lamaran`, `keterangan`, `
 (2, 19002, '70', 'LANJUT', '', 'success'),
 (3, 19003, '50', 'LANJUT', '', 'success');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visitor`
+--
+
+CREATE TABLE `visitor` (
+  `id` int(11) NOT NULL,
+  `ip` varchar(50) NOT NULL,
+  `tanggal` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `visitor`
+--
+
+INSERT INTO `visitor` (`id`, `ip`, `tanggal`) VALUES
+(3, '::1', '2019-08-17 05:58:51');
+
 --
 -- Indexes for dumped tables
 --
@@ -699,6 +719,12 @@ ALTER TABLE `seleksi_5`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `visitor`
+--
+ALTER TABLE `visitor`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -731,7 +757,7 @@ ALTER TABLE `pelamar`
 -- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `seleksi_1`
 --
@@ -756,6 +782,11 @@ ALTER TABLE `seleksi_4`
 -- AUTO_INCREMENT for table `seleksi_5`
 --
 ALTER TABLE `seleksi_5`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `visitor`
+--
+ALTER TABLE `visitor`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
